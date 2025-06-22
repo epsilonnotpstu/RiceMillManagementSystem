@@ -195,5 +195,19 @@ namespace RiceMillManagementSystem
             purchasesForm.Show();
             this.Hide();
         }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            Sales salesForm = new Sales(userId);
+            salesForm.Show();
+            this.Hide();
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            Payments paymentsForm = new Payments(userId);
+            paymentsForm.Show();
+            this.Hide();
+        }
     }
 }
