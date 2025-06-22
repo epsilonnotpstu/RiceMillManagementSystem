@@ -269,5 +269,12 @@ namespace RiceMillManagementSystem
         {
             MessageBox.Show("You are in Payments Page!");
         }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports reportForm = new Reports(userId);
+            reportForm.Show();
+            this.Hide();
+        }
     }
 }
