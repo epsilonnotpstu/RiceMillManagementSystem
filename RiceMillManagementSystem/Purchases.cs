@@ -203,5 +203,77 @@ namespace RiceMillManagementSystem
                 offset += (int)fontHeight + 5;
             }
         }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboardForm = new Dashboard(userId);
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            Inventory inventoryForm = new Inventory(userId);
+            inventoryForm.Show();
+            this.Hide();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            Customers customersForm = new Customers(userId);
+            customersForm.Show();
+            this.Hide();
+
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliersForm = new Suppliers(userId);
+            suppliersForm.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            Sales salesForm = new Sales(userId);
+                
+            salesForm.Show();
+            this.Hide();
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            Payments paymentsForm = new Payments(userId);
+            paymentsForm.Show();
+            this.Hide();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports reportsForm = new Reports(userId);
+                
+            reportsForm.Show();
+            this.Hide();
+        }
+
+        private void btnPurchases_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are in Purchases Page!");
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Hide();
+
+            // Create a new instance of the Login form and show it
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
     }
 }

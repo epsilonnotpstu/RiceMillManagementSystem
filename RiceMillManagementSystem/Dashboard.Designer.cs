@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTotalSales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,6 +79,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(44)))));
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnReports);
             this.panelMenu.Controls.Add(this.btnPayments);
@@ -91,8 +93,9 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 690);
+            this.panelMenu.Size = new System.Drawing.Size(250, 774);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // btnLogout
             // 
@@ -102,7 +105,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 640);
+            this.btnLogout.Location = new System.Drawing.Point(0, 724);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(250, 50);
             this.btnLogout.TabIndex = 9;
@@ -115,19 +118,20 @@
             this.btnReports.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Location = new System.Drawing.Point(0, 480);
+            this.btnReports.Location = new System.Drawing.Point(0, 541);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(250, 50);
             this.btnReports.TabIndex = 8;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnPayments
             // 
             this.btnPayments.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPayments.ForeColor = System.Drawing.Color.White;
-            this.btnPayments.Location = new System.Drawing.Point(0, 420);
+            this.btnPayments.Location = new System.Drawing.Point(0, 488);
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(250, 50);
             this.btnPayments.TabIndex = 7;
@@ -140,7 +144,7 @@
             this.btnSales.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Location = new System.Drawing.Point(0, 360);
+            this.btnSales.Location = new System.Drawing.Point(0, 435);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(250, 50);
             this.btnSales.TabIndex = 6;
@@ -153,7 +157,7 @@
             this.btnPurchases.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPurchases.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPurchases.ForeColor = System.Drawing.Color.White;
-            this.btnPurchases.Location = new System.Drawing.Point(0, 300);
+            this.btnPurchases.Location = new System.Drawing.Point(0, 382);
             this.btnPurchases.Name = "btnPurchases";
             this.btnPurchases.Size = new System.Drawing.Size(250, 50);
             this.btnPurchases.TabIndex = 5;
@@ -166,7 +170,7 @@
             this.btnSuppliers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSuppliers.ForeColor = System.Drawing.Color.White;
-            this.btnSuppliers.Location = new System.Drawing.Point(0, 240);
+            this.btnSuppliers.Location = new System.Drawing.Point(0, 328);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(250, 50);
             this.btnSuppliers.TabIndex = 4;
@@ -179,7 +183,7 @@
             this.btnCustomers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 180);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 274);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(250, 50);
             this.btnCustomers.TabIndex = 3;
@@ -192,7 +196,7 @@
             this.btnInventory.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnInventory.ForeColor = System.Drawing.Color.White;
-            this.btnInventory.Location = new System.Drawing.Point(0, 120);
+            this.btnInventory.Location = new System.Drawing.Point(0, 219);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(250, 50);
             this.btnInventory.TabIndex = 2;
@@ -234,7 +238,7 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(250, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1033, 690);
+            this.panelContent.Size = new System.Drawing.Size(1212, 774);
             this.panelContent.TabIndex = 1;
             // 
             // groupBox3
@@ -294,17 +298,17 @@
             // 
             // salesChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.salesChart.ChartAreas.Add(chartArea1);
+            chartArea5.Name = "ChartArea1";
+            this.salesChart.ChartAreas.Add(chartArea5);
             this.salesChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.salesChart.Legends.Add(legend1);
+            legend5.Name = "Legend1";
+            this.salesChart.Legends.Add(legend5);
             this.salesChart.Location = new System.Drawing.Point(3, 19);
             this.salesChart.Name = "salesChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Sales";
-            this.salesChart.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Sales";
+            this.salesChart.Series.Add(series5);
             this.salesChart.Size = new System.Drawing.Size(1149, 253);
             this.salesChart.TabIndex = 0;
             this.salesChart.Text = "chart1";
@@ -437,11 +441,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Sales (Today)";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Dashboard";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.ClientSize = new System.Drawing.Size(1462, 774);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelMenu);
             this.Name = "Dashboard";
@@ -500,5 +517,6 @@
         private System.Windows.Forms.DataGridView dgvRecentSales;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvLowStock;
+        private System.Windows.Forms.Button button1;
     }
 }

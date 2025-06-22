@@ -256,5 +256,59 @@ namespace RiceMillManagementSystem
             Login loginForm = new Login();
             loginForm.Show();
         }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboardForm = new Dashboard(userId);
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            Inventory inventoryForm = new Inventory(this.userId);
+            inventoryForm.Show();   
+            this.Hide();    
+
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are in Suppliers Page!");
+
+        }
+
+        private void btnPurchases_Click(object sender, EventArgs e)
+        {
+            Purchases pur = new Purchases(this.userId);
+            pur.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales(this.userId);
+            sales.Show();
+            this.Hide();
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            Payments payments = new Payments(this.userId);
+            payments.Show();
+            this.Hide();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports reports = new Reports(this.userId);
+            reports.Show();
+            this.Hide();
+        }
     }
 }

@@ -59,6 +59,7 @@
             this.cmbCustomers = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -70,6 +71,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(44)))));
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.lblWelcomeUser);
             this.panelMenu.Controls.Add(this.lblWelcome);
             this.panelMenu.Controls.Add(this.btnLogout);
@@ -85,6 +87,7 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 661);
             this.panelMenu.TabIndex = 5;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // lblWelcomeUser
             // 
@@ -104,7 +107,7 @@
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
             this.lblWelcome.Location = new System.Drawing.Point(70, 20);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(98, 24);
+            this.lblWelcome.Size = new System.Drawing.Size(139, 32);
             this.lblWelcome.TabIndex = 10;
             this.lblWelcome.Text = "Welcome";
             // 
@@ -122,13 +125,14 @@
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnReports
             // 
             this.btnReports.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Location = new System.Drawing.Point(0, 455);
+            this.btnReports.Location = new System.Drawing.Point(0, 533);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(250, 50);
             this.btnReports.TabIndex = 8;
@@ -140,72 +144,78 @@
             this.btnPayments.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPayments.ForeColor = System.Drawing.Color.White;
-            this.btnPayments.Location = new System.Drawing.Point(0, 395);
+            this.btnPayments.Location = new System.Drawing.Point(0, 481);
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(250, 50);
             this.btnPayments.TabIndex = 7;
             this.btnPayments.Text = "Payments";
             this.btnPayments.UseVisualStyleBackColor = false;
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
             // btnSales
             // 
             this.btnSales.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Location = new System.Drawing.Point(0, 335);
+            this.btnSales.Location = new System.Drawing.Point(0, 428);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(250, 50);
             this.btnSales.TabIndex = 6;
             this.btnSales.Text = "Sales";
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnPurchases
             // 
             this.btnPurchases.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPurchases.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPurchases.ForeColor = System.Drawing.Color.White;
-            this.btnPurchases.Location = new System.Drawing.Point(0, 275);
+            this.btnPurchases.Location = new System.Drawing.Point(0, 377);
             this.btnPurchases.Name = "btnPurchases";
             this.btnPurchases.Size = new System.Drawing.Size(250, 50);
             this.btnPurchases.TabIndex = 5;
             this.btnPurchases.Text = "Purchases";
             this.btnPurchases.UseVisualStyleBackColor = false;
+            this.btnPurchases.Click += new System.EventHandler(this.btnPurchases_Click);
             // 
             // btnSuppliers
             // 
             this.btnSuppliers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSuppliers.ForeColor = System.Drawing.Color.White;
-            this.btnSuppliers.Location = new System.Drawing.Point(0, 215);
+            this.btnSuppliers.Location = new System.Drawing.Point(0, 325);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(250, 50);
             this.btnSuppliers.TabIndex = 4;
             this.btnSuppliers.Text = "Suppliers";
             this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnCustomers
             // 
             this.btnCustomers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 155);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 273);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(250, 50);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnInventory
             // 
             this.btnInventory.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnInventory.ForeColor = System.Drawing.Color.White;
-            this.btnInventory.Location = new System.Drawing.Point(0, 95);
+            this.btnInventory.Location = new System.Drawing.Point(0, 222);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(250, 50);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // panelContent
             // 
@@ -270,7 +280,7 @@
             // 
             this.dtpPaymentDate.Location = new System.Drawing.Point(460, 80);
             this.dtpPaymentDate.Name = "dtpPaymentDate";
-            this.dtpPaymentDate.Size = new System.Drawing.Size(200, 23);
+            this.dtpPaymentDate.Size = new System.Drawing.Size(200, 30);
             this.dtpPaymentDate.TabIndex = 7;
             // 
             // label5
@@ -278,7 +288,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(340, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 17);
+            this.label5.Size = new System.Drawing.Size(154, 25);
             this.label5.TabIndex = 6;
             this.label5.Text = "Payment Date:";
             // 
@@ -291,7 +301,7 @@
             "Mobile Payment"});
             this.cmbPaymentMethod.Location = new System.Drawing.Point(460, 37);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new System.Drawing.Size(200, 24);
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(200, 33);
             this.cmbPaymentMethod.TabIndex = 5;
             // 
             // label4
@@ -299,7 +309,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(340, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 17);
+            this.label4.Size = new System.Drawing.Size(181, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Payment Method:";
             // 
@@ -307,7 +317,7 @@
             // 
             this.txtPaymentAmount.Location = new System.Drawing.Point(150, 80);
             this.txtPaymentAmount.Name = "txtPaymentAmount";
-            this.txtPaymentAmount.Size = new System.Drawing.Size(160, 23);
+            this.txtPaymentAmount.Size = new System.Drawing.Size(160, 30);
             this.txtPaymentAmount.TabIndex = 3;
             // 
             // label3
@@ -315,7 +325,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(20, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Amount:";
             // 
@@ -325,7 +335,7 @@
             this.lblSelectedInvoice.ForeColor = System.Drawing.Color.Blue;
             this.lblSelectedInvoice.Location = new System.Drawing.Point(150, 40);
             this.lblSelectedInvoice.Name = "lblSelectedInvoice";
-            this.lblSelectedInvoice.Size = new System.Drawing.Size(44, 17);
+            this.lblSelectedInvoice.Size = new System.Drawing.Size(60, 25);
             this.lblSelectedInvoice.TabIndex = 1;
             this.lblSelectedInvoice.Text = "none";
             // 
@@ -334,7 +344,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 17);
+            this.label1.Size = new System.Drawing.Size(179, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Selected Invoice:";
             // 
@@ -356,11 +366,12 @@
             this.dgvCustomerSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerSales.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomerSales.Location = new System.Drawing.Point(3, 19);
+            this.dgvCustomerSales.Location = new System.Drawing.Point(3, 26);
             this.dgvCustomerSales.Name = "dgvCustomerSales";
             this.dgvCustomerSales.ReadOnly = true;
+            this.dgvCustomerSales.RowHeadersWidth = 62;
             this.dgvCustomerSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomerSales.Size = new System.Drawing.Size(884, 318);
+            this.dgvCustomerSales.Size = new System.Drawing.Size(884, 311);
             this.dgvCustomerSales.TabIndex = 0;
             this.dgvCustomerSales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerSales_CellClick);
             // 
@@ -385,7 +396,7 @@
             this.lblTotalOutstanding.ForeColor = System.Drawing.Color.Red;
             this.lblTotalOutstanding.Location = new System.Drawing.Point(740, 35);
             this.lblTotalOutstanding.Name = "lblTotalOutstanding";
-            this.lblTotalOutstanding.Size = new System.Drawing.Size(49, 24);
+            this.lblTotalOutstanding.Size = new System.Drawing.Size(74, 32);
             this.lblTotalOutstanding.TabIndex = 3;
             this.lblTotalOutstanding.Text = "0.00";
             // 
@@ -394,7 +405,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(520, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 17);
+            this.label6.Size = new System.Drawing.Size(275, 25);
             this.label6.TabIndex = 2;
             this.label6.Text = "Total Outstanding Balance:";
             // 
@@ -403,7 +414,7 @@
             this.cmbCustomers.FormattingEnabled = true;
             this.cmbCustomers.Location = new System.Drawing.Point(180, 35);
             this.cmbCustomers.Name = "cmbCustomers";
-            this.cmbCustomers.Size = new System.Drawing.Size(280, 24);
+            this.cmbCustomers.Size = new System.Drawing.Size(280, 33);
             this.cmbCustomers.TabIndex = 1;
             this.cmbCustomers.SelectedIndexChanged += new System.EventHandler(this.cmbCustomers_SelectedIndexChanged);
             // 
@@ -412,13 +423,26 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(30, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 17);
+            this.label2.Size = new System.Drawing.Size(179, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Select Customer:";
             // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Dashboard";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Payments
             // 
@@ -476,5 +500,6 @@
         private System.Windows.Forms.Button btnPrintReceipt;
         private System.Windows.Forms.Button btnRecordPayment;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Button button1;
     }
 }

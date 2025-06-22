@@ -91,27 +91,29 @@ namespace RiceMillManagementSystem
 
         private void cmbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbItems.SelectedValue == null)
+            if (cmbItems.SelectedItem is DataRowView drv)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string query = "SELECT Quantity FROM Inventory WHERE ItemID = @ItemID";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        // Correctly get the ItemID from the DataRowView
+                        cmd.Parameters.AddWithValue("@ItemID", drv["ItemID"]);
+                        object result = cmd.ExecuteScalar();
+                        lblStockAvailable.Text = result?.ToString() ?? "0";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error fetching stock: " + ex.Message);
+                    }
+                }
+            }
+            else
             {
                 lblStockAvailable.Text = "0";
-                return;
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT Quantity FROM Inventory WHERE ItemID = @ItemID";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@ItemID", cmbItems.SelectedValue);
-                    object result = cmd.ExecuteScalar();
-                    lblStockAvailable.Text = result?.ToString() ?? "0";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error fetching stock: " + ex.Message);
-                }
             }
         }
 
@@ -125,10 +127,17 @@ namespace RiceMillManagementSystem
         private void btnRecordSale_Click(object sender, EventArgs e)
         {
             // --- Validations ---
-            if (cmbCustomers.SelectedValue == null || cmbItems.SelectedValue == null) { MessageBox.Show("Please select a customer and an item."); return; }
+            if (!(cmbCustomers.SelectedItem is DataRowView) || !(cmbItems.SelectedItem is DataRowView)) { MessageBox.Show("Please select a customer and an item."); return; }
             if (!decimal.TryParse(txtQuantity.Text, out decimal quantity) || quantity <= 0) { MessageBox.Show("Please enter a valid quantity."); return; }
             if (!decimal.TryParse(txtUnitPrice.Text, out decimal unitPrice) || unitPrice < 0) { MessageBox.Show("Please enter a valid unit price."); return; }
             if (!decimal.TryParse(lblStockAvailable.Text, out decimal availableStock) || quantity > availableStock) { MessageBox.Show("Cannot sell. Quantity exceeds available stock."); return; }
+
+            // Correctly get IDs from the DataRowView objects
+            DataRowView customerDrv = (DataRowView)cmbCustomers.SelectedItem;
+            int customerId = Convert.ToInt32(customerDrv["CustomerID"]);
+
+            DataRowView itemDrv = (DataRowView)cmbItems.SelectedItem;
+            int itemId = Convert.ToInt32(itemDrv["ItemID"]);
 
             // --- Database Transaction ---
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -141,20 +150,19 @@ namespace RiceMillManagementSystem
                     string inventoryQuery = "UPDATE Inventory SET Quantity = Quantity - @SaleQuantity, LastUpdated = GETDATE() WHERE ItemID = @ItemID AND Quantity >= @SaleQuantity";
                     SqlCommand inventoryCmd = new SqlCommand(inventoryQuery, conn, transaction);
                     inventoryCmd.Parameters.AddWithValue("@SaleQuantity", quantity);
-                    inventoryCmd.Parameters.AddWithValue("@ItemID", cmbItems.SelectedValue);
+                    inventoryCmd.Parameters.AddWithValue("@ItemID", itemId); // Use corrected variable
                     int rowsAffected = inventoryCmd.ExecuteNonQuery();
 
                     if (rowsAffected == 0)
                     {
-                        // This means stock was insufficient.
                         throw new Exception("Inventory update failed. Insufficient stock or item not found.");
                     }
 
                     // 2. Insert into Sales table
                     string saleQuery = "INSERT INTO Sales (CustomerID, ItemID, Quantity, UnitPrice, TotalAmount, SaleDate, InvoiceNumber) VALUES (@CustomerID, @ItemID, @Quantity, @UnitPrice, @TotalAmount, @SaleDate, @InvoiceNumber)";
                     SqlCommand saleCmd = new SqlCommand(saleQuery, conn, transaction);
-                    saleCmd.Parameters.AddWithValue("@CustomerID", cmbCustomers.SelectedValue);
-                    saleCmd.Parameters.AddWithValue("@ItemID", cmbItems.SelectedValue);
+                    saleCmd.Parameters.AddWithValue("@CustomerID", customerId); // Use corrected variable
+                    saleCmd.Parameters.AddWithValue("@ItemID", itemId);       // Use corrected variable
                     saleCmd.Parameters.AddWithValue("@Quantity", quantity);
                     saleCmd.Parameters.AddWithValue("@UnitPrice", unitPrice);
                     saleCmd.Parameters.AddWithValue("@TotalAmount", quantity * unitPrice);
@@ -174,7 +182,7 @@ namespace RiceMillManagementSystem
 
             // Refresh and reset
             PopulateSalesGrid();
-            PopulateComboBoxes(); // Re-populate to update stock availability
+            PopulateComboBoxes();
             ClearForm();
             GenerateInvoiceNumber();
         }
@@ -260,6 +268,75 @@ namespace RiceMillManagementSystem
 
             g.DrawString("Total Amount:", headerFont, Brushes.Black, startX + 400, yPos);
             g.DrawString(saleToPrint["TotalAmount"], headerFont, Brushes.Black, startX + 550, yPos);
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            Payments paymentsForm = new Payments(userId);
+            paymentsForm.Show();
+            this.Hide();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports reportsForm = new Reports(userId);
+            reportsForm.Show();
+            this.Hide();
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboardForm = new Dashboard(userId);
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are in Sales Page!");
+        }
+
+        private void btnPurchases_Click(object sender, EventArgs e)
+        {
+            Purchases pur = new Purchases(userId);
+            pur.Show();
+            this.Hide();
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliersForm = new Suppliers(userId);
+            suppliersForm.Show();
+            this.Hide();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            Customers customersForm = new Customers(userId);
+            customersForm.Show();
+            this.Hide();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            Inventory inventoryForm = new Inventory(userId);
+            inventoryForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Hide();
+
+            // Create a new instance of the Login form and show it
+            Login loginForm = new Login();
+            loginForm.Show();
         }
     }
 }

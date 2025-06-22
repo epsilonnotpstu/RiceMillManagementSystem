@@ -164,7 +164,7 @@ namespace RiceMillManagementSystem
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            Inventory inventoryForm = new Inventory(3);
+            Inventory inventoryForm = new Inventory(userId);
             inventoryForm.Show();
         }
 
@@ -207,6 +207,23 @@ namespace RiceMillManagementSystem
         {
             Payments paymentsForm = new Payments(userId);
             paymentsForm.Show();
+            this.Hide();
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are in Dashboard Page!");
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports reportForm = new Reports(userId);
+            reportForm.Show();
             this.Hide();
         }
     }

@@ -216,10 +216,10 @@ namespace RiceMillManagementSystem
         private void btnInventory_Click(object sender, EventArgs e)
         {
             // Assuming Inventory form also takes userId for consistency
-            // Inventory inventoryForm = new Inventory(this.userId); 
-            // inventoryForm.Show();
-            // this.Hide();
-            MessageBox.Show("Inventory form would open here.");
+            Inventory inventoryForm = new Inventory(this.userId);
+            inventoryForm.Show();
+            this.Hide();
+            // MessageBox.Show("Inventory form would open here.");
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -232,6 +232,59 @@ namespace RiceMillManagementSystem
         private void txtAddress_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard(userId);
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Customers Page Would Open Here!");
+            
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliersForm = new Suppliers(userId);
+            suppliersForm.Show();
+            this.Hide();
+        }
+
+        private void btnPurchases_Click(object sender, EventArgs e)
+        {
+            Purchases pur = new Purchases(userId);
+            pur.Show();
+            this.Hide();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            Sales salesForm = new Sales(userId);
+            salesForm.Show();
+            this.Hide();
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            Payments paymentsForm = new Payments(userId);
+            paymentsForm.Show();
+            this.Hide();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports reportsForm = new Reports(userId);
+            reportsForm.Show();
+            this.Hide();
         }
     }
 }

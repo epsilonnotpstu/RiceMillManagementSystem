@@ -1,6 +1,6 @@
 ﻿namespace RiceMillManagementSystem
 {
-    partial class Customers
+    partial class Reports
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblWelcomeUser = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -41,23 +40,31 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblReportTitle = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtContact = new System.Windows.Forms.TextBox();
+            this.dgvReportData = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pnlEntityFilter = new System.Windows.Forms.Panel();
+            this.cmbEntity = new System.Windows.Forms.ComboBox();
+            this.lblEntity = new System.Windows.Forms.Label();
+            this.pnlDateFilters = new System.Windows.Forms.Panel();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportData)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.pnlEntityFilter.SuspendLayout();
+            this.pnlDateFilters.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -77,22 +84,8 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 648);
-            this.panelMenu.TabIndex = 1;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-1, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 50);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panelMenu.Size = new System.Drawing.Size(250, 661);
+            this.panelMenu.TabIndex = 6;
             // 
             // lblWelcomeUser
             // 
@@ -124,7 +117,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 598);
+            this.btnLogout.Location = new System.Drawing.Point(0, 611);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(250, 50);
             this.btnLogout.TabIndex = 9;
@@ -137,7 +130,7 @@
             this.btnReports.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Location = new System.Drawing.Point(-3, 518);
+            this.btnReports.Location = new System.Drawing.Point(0, 532);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(250, 50);
             this.btnReports.TabIndex = 8;
@@ -150,7 +143,7 @@
             this.btnPayments.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPayments.ForeColor = System.Drawing.Color.White;
-            this.btnPayments.Location = new System.Drawing.Point(-3, 464);
+            this.btnPayments.Location = new System.Drawing.Point(0, 472);
             this.btnPayments.Name = "btnPayments";
             this.btnPayments.Size = new System.Drawing.Size(250, 50);
             this.btnPayments.TabIndex = 7;
@@ -163,7 +156,7 @@
             this.btnSales.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Location = new System.Drawing.Point(-3, 410);
+            this.btnSales.Location = new System.Drawing.Point(0, 412);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(250, 50);
             this.btnSales.TabIndex = 6;
@@ -176,7 +169,7 @@
             this.btnPurchases.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPurchases.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPurchases.ForeColor = System.Drawing.Color.White;
-            this.btnPurchases.Location = new System.Drawing.Point(-3, 355);
+            this.btnPurchases.Location = new System.Drawing.Point(0, 352);
             this.btnPurchases.Name = "btnPurchases";
             this.btnPurchases.Size = new System.Drawing.Size(250, 50);
             this.btnPurchases.TabIndex = 5;
@@ -189,7 +182,7 @@
             this.btnSuppliers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSuppliers.ForeColor = System.Drawing.Color.White;
-            this.btnSuppliers.Location = new System.Drawing.Point(-3, 301);
+            this.btnSuppliers.Location = new System.Drawing.Point(0, 292);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(250, 50);
             this.btnSuppliers.TabIndex = 4;
@@ -202,7 +195,7 @@
             this.btnCustomers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(-3, 247);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 232);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(250, 50);
             this.btnCustomers.TabIndex = 3;
@@ -215,7 +208,7 @@
             this.btnInventory.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnInventory.ForeColor = System.Drawing.Color.White;
-            this.btnInventory.Location = new System.Drawing.Point(-3, 192);
+            this.btnInventory.Location = new System.Drawing.Point(0, 172);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(250, 50);
             this.btnInventory.TabIndex = 2;
@@ -225,209 +218,229 @@
             // 
             // panelContent
             // 
-            this.panelContent.Controls.Add(this.dgvCustomers);
-            this.panelContent.Controls.Add(this.btnPrint);
-            this.panelContent.Controls.Add(this.btnClear);
-            this.panelContent.Controls.Add(this.btnUpdate);
-            this.panelContent.Controls.Add(this.btnAdd);
-            this.panelContent.Controls.Add(this.txtEmail);
-            this.panelContent.Controls.Add(this.label5);
-            this.panelContent.Controls.Add(this.txtAddress);
-            this.panelContent.Controls.Add(this.label4);
-            this.panelContent.Controls.Add(this.txtContact);
-            this.panelContent.Controls.Add(this.label3);
-            this.panelContent.Controls.Add(this.txtName);
-            this.panelContent.Controls.Add(this.label2);
+            this.panelContent.Controls.Add(this.groupBox2);
+            this.panelContent.Controls.Add(this.groupBox1);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(250, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(761, 648);
-            this.panelContent.TabIndex = 2;
+            this.panelContent.Size = new System.Drawing.Size(934, 661);
+            this.panelContent.TabIndex = 7;
             // 
-            // dgvCustomers
+            // groupBox2
             // 
-            this.dgvCustomers.AllowUserToAddRows = false;
-            this.dgvCustomers.AllowUserToDeleteRows = false;
-            this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Location = new System.Drawing.Point(20, 220);
-            this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.RowHeadersWidth = 62;
-            this.dgvCustomers.Size = new System.Drawing.Size(690, 280);
-            this.dgvCustomers.TabIndex = 26;
-            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+            this.groupBox2.Controls.Add(this.lblReportTitle);
+            this.groupBox2.Controls.Add(this.btnPrint);
+            this.groupBox2.Controls.Add(this.dgvReportData);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(20, 180);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(890, 460);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Report View";
+            // 
+            // lblReportTitle
+            // 
+            this.lblReportTitle.AutoSize = true;
+            this.lblReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.lblReportTitle.Location = new System.Drawing.Point(20, 30);
+            this.lblReportTitle.Name = "lblReportTitle";
+            this.lblReportTitle.Size = new System.Drawing.Size(30, 32);
+            this.lblReportTitle.TabIndex = 2;
+            this.lblReportTitle.Text = "_";
             // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.DarkOrange;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(560, 510);
+            this.btnPrint.Location = new System.Drawing.Point(720, 410);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(150, 35);
-            this.btnPrint.TabIndex = 25;
-            this.btnPrint.Text = "Print Customers";
+            this.btnPrint.TabIndex = 1;
+            this.btnPrint.Text = "Print Report";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // btnClear
+            // dgvReportData
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Gray;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(639, 160);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 35);
-            this.btnClear.TabIndex = 24;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.dgvReportData.AllowUserToAddRows = false;
+            this.dgvReportData.AllowUserToDeleteRows = false;
+            this.dgvReportData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReportData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReportData.Location = new System.Drawing.Point(20, 65);
+            this.dgvReportData.Name = "dgvReportData";
+            this.dgvReportData.ReadOnly = true;
+            this.dgvReportData.RowHeadersWidth = 62;
+            this.dgvReportData.Size = new System.Drawing.Size(850, 335);
+            this.dgvReportData.TabIndex = 0;
             // 
-            // btnUpdate
+            // groupBox1
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(533, 160);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 35);
-            this.btnUpdate.TabIndex = 23;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.groupBox1.Controls.Add(this.pnlEntityFilter);
+            this.groupBox1.Controls.Add(this.pnlDateFilters);
+            this.groupBox1.Controls.Add(this.btnGenerate);
+            this.groupBox1.Controls.Add(this.cmbReportType);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(20, 20);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(890, 150);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Report Controls";
             // 
-            // btnAdd
+            // pnlEntityFilter
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(428, 161);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 35);
-            this.btnAdd.TabIndex = 22;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.pnlEntityFilter.Controls.Add(this.cmbEntity);
+            this.pnlEntityFilter.Controls.Add(this.lblEntity);
+            this.pnlEntityFilter.Location = new System.Drawing.Point(30, 100);
+            this.pnlEntityFilter.Name = "pnlEntityFilter";
+            this.pnlEntityFilter.Size = new System.Drawing.Size(450, 40);
+            this.pnlEntityFilter.TabIndex = 4;
+            this.pnlEntityFilter.Visible = false;
             // 
-            // txtEmail
+            // cmbEntity
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(150, 170);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 30);
-            this.txtEmail.TabIndex = 21;
+            this.cmbEntity.FormattingEnabled = true;
+            this.cmbEntity.Location = new System.Drawing.Point(123, 5);
+            this.cmbEntity.Name = "cmbEntity";
+            this.cmbEntity.Size = new System.Drawing.Size(300, 33);
+            this.cmbEntity.TabIndex = 1;
             // 
-            // label5
+            // lblEntity
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 26);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Email:";
+            this.lblEntity.AutoSize = true;
+            this.lblEntity.Location = new System.Drawing.Point(10, 7);
+            this.lblEntity.Name = "lblEntity";
+            this.lblEntity.Size = new System.Drawing.Size(112, 25);
+            this.lblEntity.TabIndex = 0;
+            this.lblEntity.Text = "Customer:";
             // 
-            // txtAddress
+            // pnlDateFilters
             // 
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(490, 90);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 58);
-            this.txtAddress.TabIndex = 19;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            this.pnlDateFilters.Controls.Add(this.dtpEndDate);
+            this.pnlDateFilters.Controls.Add(this.label3);
+            this.pnlDateFilters.Controls.Add(this.dtpStartDate);
+            this.pnlDateFilters.Controls.Add(this.label1);
+            this.pnlDateFilters.Location = new System.Drawing.Point(30, 60);
+            this.pnlDateFilters.Name = "pnlDateFilters";
+            this.pnlDateFilters.Size = new System.Drawing.Size(674, 40);
+            this.pnlDateFilters.TabIndex = 3;
+            this.pnlDateFilters.Visible = false;
             // 
-            // label4
+            // dtpEndDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(414, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 26);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Address:";
-            // 
-            // txtContact
-            // 
-            this.txtContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(150, 130);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(250, 30);
-            this.txtContact.TabIndex = 17;
+            this.dtpEndDate.Location = new System.Drawing.Point(459, 5);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(207, 30);
+            this.dtpEndDate.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 130);
+            this.label3.Location = new System.Drawing.Point(346, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 26);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Contact Num:";
+            this.label3.Size = new System.Drawing.Size(108, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "End Date:";
             // 
-            // txtName
+            // dtpStartDate
             // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(150, 90);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 30);
-            this.txtName.TabIndex = 15;
+            this.dtpStartDate.Location = new System.Drawing.Point(141, 5);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(200, 30);
+            this.dtpStartDate.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Start Date:";
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.ForeColor = System.Drawing.Color.White;
+            this.btnGenerate.Location = new System.Drawing.Point(710, 29);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(180, 40);
+            this.btnGenerate.TabIndex = 2;
+            this.btnGenerate.Text = "Generate Report";
+            this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // cmbReportType
+            // 
+            this.cmbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReportType.FormattingEnabled = true;
+            this.cmbReportType.Location = new System.Drawing.Point(181, 24);
+            this.cmbReportType.Name = "cmbReportType";
+            this.cmbReportType.Size = new System.Drawing.Size(280, 33);
+            this.cmbReportType.TabIndex = 1;
+            this.cmbReportType.SelectedIndexChanged += new System.EventHandler(this.cmbReportType_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 90);
+            this.label2.Location = new System.Drawing.Point(30, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 26);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Name:";
+            this.label2.Size = new System.Drawing.Size(137, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Report Type:";
             // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // Customers
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Dashboard";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 648);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelMenu);
-            this.Name = "Customers";
-            this.Text = "Customers";
-            this.Load += new System.EventHandler(this.Customers_Load);
+            this.Name = "Reports";
+            this.Text = "Reports";
+            this.Load += new System.EventHandler(this.Reports_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelContent.ResumeLayout(false);
-            this.panelContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportData)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.pnlEntityFilter.ResumeLayout(false);
+            this.pnlEntityFilter.PerformLayout();
+            this.pnlDateFilters.ResumeLayout(false);
+            this.pnlDateFilters.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.DataGridView dgvCustomers;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtContact;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label2;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label lblWelcomeUser;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnPayments;
@@ -436,8 +449,24 @@
         private System.Windows.Forms.Button btnSuppliers;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Label lblWelcomeUser;
-        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvReportData;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Label lblReportTitle;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.ComboBox cmbReportType;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlDateFilters;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlEntityFilter;
+        private System.Windows.Forms.ComboBox cmbEntity;
+        private System.Windows.Forms.Label lblEntity;
+        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Button button1;
     }
 }
