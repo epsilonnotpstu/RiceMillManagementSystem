@@ -18,7 +18,7 @@ namespace RiceMillManagementSystem
             InitializeComponent();
             this.userId = userId;
         }
-
+      
         private void Reports_Load(object sender, EventArgs e)
         {
             LoadUserData();
@@ -33,7 +33,23 @@ namespace RiceMillManagementSystem
 
         private void LoadUserData()
         {
-            // Code to load user's name from DB
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Name FROM Users WHERE UserID=@userId";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    string name = cmd.ExecuteScalar()?.ToString();
+                    lblWelcomeUser.Text = !string.IsNullOrEmpty(name) ? name : "User Not Found";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading user data: " + ex.Message);
+                    lblWelcomeUser.Text = "Error";
+                }
+            }
         }
 
         private void cmbReportType_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,6 +138,7 @@ namespace RiceMillManagementSystem
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     return dt;
+                    
                 }
                 catch (Exception ex)
                 {
@@ -312,6 +329,11 @@ namespace RiceMillManagementSystem
             // Create a new instance of the Login form and show it
             Login loginForm = new Login();
             loginForm.Show();
+        }
+
+        private void lblWelcomeUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

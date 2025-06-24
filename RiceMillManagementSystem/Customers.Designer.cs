@@ -76,8 +76,9 @@
             this.panelMenu.Controls.Add(this.btnInventory);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 648);
+            this.panelMenu.Size = new System.Drawing.Size(375, 845);
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -86,9 +87,10 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-1, 138);
+            this.button1.Location = new System.Drawing.Point(0, 145);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.Size = new System.Drawing.Size(375, 77);
             this.button1.TabIndex = 12;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = false;
@@ -98,9 +100,10 @@
             // 
             this.lblWelcomeUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lblWelcomeUser.ForeColor = System.Drawing.Color.White;
-            this.lblWelcomeUser.Location = new System.Drawing.Point(3, 60);
+            this.lblWelcomeUser.Location = new System.Drawing.Point(4, 92);
+            this.lblWelcomeUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcomeUser.Name = "lblWelcomeUser";
-            this.lblWelcomeUser.Size = new System.Drawing.Size(244, 26);
+            this.lblWelcomeUser.Size = new System.Drawing.Size(366, 40);
             this.lblWelcomeUser.TabIndex = 11;
             this.lblWelcomeUser.Text = "User Name";
             this.lblWelcomeUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,9 +113,10 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(70, 20);
+            this.lblWelcome.Location = new System.Drawing.Point(105, 31);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(139, 32);
+            this.lblWelcome.Size = new System.Drawing.Size(98, 24);
             this.lblWelcome.TabIndex = 10;
             this.lblWelcome.Text = "Welcome";
             // 
@@ -124,9 +128,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 598);
+            this.btnLogout.Location = new System.Drawing.Point(0, 768);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(250, 50);
+            this.btnLogout.Size = new System.Drawing.Size(375, 77);
             this.btnLogout.TabIndex = 9;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -137,9 +142,10 @@
             this.btnReports.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Location = new System.Drawing.Point(-3, 518);
+            this.btnReports.Location = new System.Drawing.Point(-4, 797);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(250, 50);
+            this.btnReports.Size = new System.Drawing.Size(375, 77);
             this.btnReports.TabIndex = 8;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
@@ -150,9 +156,10 @@
             this.btnPayments.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPayments.ForeColor = System.Drawing.Color.White;
-            this.btnPayments.Location = new System.Drawing.Point(-3, 464);
+            this.btnPayments.Location = new System.Drawing.Point(-2, 647);
+            this.btnPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPayments.Name = "btnPayments";
-            this.btnPayments.Size = new System.Drawing.Size(250, 50);
+            this.btnPayments.Size = new System.Drawing.Size(375, 77);
             this.btnPayments.TabIndex = 7;
             this.btnPayments.Text = "Payments";
             this.btnPayments.UseVisualStyleBackColor = false;
@@ -163,9 +170,10 @@
             this.btnSales.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Location = new System.Drawing.Point(-3, 410);
+            this.btnSales.Location = new System.Drawing.Point(-2, 564);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(250, 50);
+            this.btnSales.Size = new System.Drawing.Size(375, 77);
             this.btnSales.TabIndex = 6;
             this.btnSales.Text = "Sales";
             this.btnSales.UseVisualStyleBackColor = false;
@@ -176,9 +184,10 @@
             this.btnPurchases.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPurchases.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnPurchases.ForeColor = System.Drawing.Color.White;
-            this.btnPurchases.Location = new System.Drawing.Point(-3, 355);
+            this.btnPurchases.Location = new System.Drawing.Point(-2, 479);
+            this.btnPurchases.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPurchases.Name = "btnPurchases";
-            this.btnPurchases.Size = new System.Drawing.Size(250, 50);
+            this.btnPurchases.Size = new System.Drawing.Size(375, 77);
             this.btnPurchases.TabIndex = 5;
             this.btnPurchases.Text = "Purchases";
             this.btnPurchases.UseVisualStyleBackColor = false;
@@ -189,9 +198,10 @@
             this.btnSuppliers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSuppliers.ForeColor = System.Drawing.Color.White;
-            this.btnSuppliers.Location = new System.Drawing.Point(-3, 301);
+            this.btnSuppliers.Location = new System.Drawing.Point(-2, 396);
+            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Size = new System.Drawing.Size(250, 50);
+            this.btnSuppliers.Size = new System.Drawing.Size(375, 77);
             this.btnSuppliers.TabIndex = 4;
             this.btnSuppliers.Text = "Suppliers";
             this.btnSuppliers.UseVisualStyleBackColor = false;
@@ -202,9 +212,10 @@
             this.btnCustomers.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(-3, 247);
+            this.btnCustomers.Location = new System.Drawing.Point(-2, 313);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(250, 50);
+            this.btnCustomers.Size = new System.Drawing.Size(375, 77);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
@@ -215,9 +226,10 @@
             this.btnInventory.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnInventory.ForeColor = System.Drawing.Color.White;
-            this.btnInventory.Location = new System.Drawing.Point(-3, 192);
+            this.btnInventory.Location = new System.Drawing.Point(-2, 228);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(250, 50);
+            this.btnInventory.Size = new System.Drawing.Size(375, 77);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
@@ -239,9 +251,10 @@
             this.panelContent.Controls.Add(this.txtName);
             this.panelContent.Controls.Add(this.label2);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(250, 0);
+            this.panelContent.Location = new System.Drawing.Point(375, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(761, 648);
+            this.panelContent.Size = new System.Drawing.Size(1141, 845);
             this.panelContent.TabIndex = 2;
             // 
             // dgvCustomers
@@ -250,11 +263,12 @@
             this.dgvCustomers.AllowUserToDeleteRows = false;
             this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Location = new System.Drawing.Point(20, 220);
+            this.dgvCustomers.Location = new System.Drawing.Point(30, 338);
+            this.dgvCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
             this.dgvCustomers.RowHeadersWidth = 62;
-            this.dgvCustomers.Size = new System.Drawing.Size(690, 280);
+            this.dgvCustomers.Size = new System.Drawing.Size(1035, 431);
             this.dgvCustomers.TabIndex = 26;
             this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
             // 
@@ -264,9 +278,10 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(560, 510);
+            this.btnPrint.Location = new System.Drawing.Point(840, 785);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(150, 35);
+            this.btnPrint.Size = new System.Drawing.Size(225, 54);
             this.btnPrint.TabIndex = 25;
             this.btnPrint.Text = "Print Customers";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -278,9 +293,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(639, 160);
+            this.btnClear.Location = new System.Drawing.Point(958, 246);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 35);
+            this.btnClear.Size = new System.Drawing.Size(150, 54);
             this.btnClear.TabIndex = 24;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -292,9 +308,10 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(533, 160);
+            this.btnUpdate.Location = new System.Drawing.Point(800, 246);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(150, 54);
             this.btnUpdate.TabIndex = 23;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -306,9 +323,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(428, 161);
+            this.btnAdd.Location = new System.Drawing.Point(642, 248);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 35);
+            this.btnAdd.Size = new System.Drawing.Size(150, 54);
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -317,28 +335,31 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(150, 170);
+            this.txtEmail.Location = new System.Drawing.Point(225, 262);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 30);
+            this.txtEmail.Size = new System.Drawing.Size(373, 23);
             this.txtEmail.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 170);
+            this.label5.Location = new System.Drawing.Point(30, 262);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 26);
+            this.label5.Size = new System.Drawing.Size(55, 18);
             this.label5.TabIndex = 20;
             this.label5.Text = "Email:";
             // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(490, 90);
+            this.txtAddress.Location = new System.Drawing.Point(735, 138);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 58);
+            this.txtAddress.Size = new System.Drawing.Size(373, 87);
             this.txtAddress.TabIndex = 19;
             this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
@@ -346,45 +367,50 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(414, 90);
+            this.label4.Location = new System.Drawing.Point(621, 138);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 26);
+            this.label4.Size = new System.Drawing.Size(74, 18);
             this.label4.TabIndex = 18;
             this.label4.Text = "Address:";
             // 
             // txtContact
             // 
             this.txtContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(150, 130);
+            this.txtContact.Location = new System.Drawing.Point(225, 200);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(250, 30);
+            this.txtContact.Size = new System.Drawing.Size(373, 23);
             this.txtContact.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 130);
+            this.label3.Location = new System.Drawing.Point(30, 200);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 26);
+            this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 16;
             this.label3.Text = "Contact Num:";
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(150, 90);
+            this.txtName.Location = new System.Drawing.Point(225, 138);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 30);
+            this.txtName.Size = new System.Drawing.Size(373, 23);
             this.txtName.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 90);
+            this.label2.Location = new System.Drawing.Point(30, 138);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 26);
+            this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 14;
             this.label2.Text = "Name:";
             // 
@@ -394,11 +420,12 @@
             // 
             // Customers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 648);
+            this.ClientSize = new System.Drawing.Size(1516, 845);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Customers";
             this.Text = "Customers";
             this.Load += new System.EventHandler(this.Customers_Load);

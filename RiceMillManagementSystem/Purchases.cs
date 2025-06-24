@@ -28,7 +28,23 @@ namespace RiceMillManagementSystem
 
         private void LoadUserData()
         {
-            // Code to load user's name into lblWelcomeUser (same as other forms)
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Name FROM Users WHERE UserID=@userId";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    string name = cmd.ExecuteScalar()?.ToString();
+                    lblWelcomeUser.Text = !string.IsNullOrEmpty(name) ? name : "User Not Found";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading user data: " + ex.Message);
+                    lblWelcomeUser.Text = "Error";
+                }
+            }
         }
 
         private void PopulateComboBoxes()
