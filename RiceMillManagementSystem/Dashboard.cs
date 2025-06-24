@@ -226,5 +226,10 @@ namespace RiceMillManagementSystem
             reportForm.Show();
             this.Hide();
         }
+
+        private void salesChart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
